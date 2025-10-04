@@ -1,0 +1,52 @@
+[
+    {
+        "id":1,
+        "name":"Story Book",
+        "title":"Whispers of a Thousand Stories,where every page unlocks a new world.",
+        "price":0,
+        "category":"Free",
+        "image":"cards.jpg"
+    },
+
+     {
+        "id":2,
+        "name":"Comedy Book",
+        "title":"Whispers of a Thousand Stories,where every page unlocks a new world.",
+        "price":0,
+        "category":"Free",
+        "image":"cards.jpg"
+    },
+
+     {
+        "id":3,
+        "name":"Music Book",
+        "title":"Whispers of a Thousand Stories,where every page unlocks a new world.",
+        "price":0,
+        "category":"Song",
+        "image":"cards.jpg"
+    },
+     {
+        "id":4,
+        "name":"Food Book",
+        "title":"Whispers of a Thousand Stories,where every page unlocks a new world.",
+        "price":0,
+        "category":"Food",
+        "image":"cards.jpg"
+    },
+     {
+        "id":5,
+        "name":"Programming Book",
+        "title":"Whispers of a Thousand Stories,where every page unlocks a new world.",
+        "price":0,
+        "category":"Free",
+        "image":"cards.jpg"
+    },
+     {
+        "id":6,
+        "name":"Science Book",
+        "title":"Whispers of a Thousand Stories,where every page unlocks a new world.",
+        "price":0,
+        "category":"Free",
+        "image":"cards.jpg"
+    }
+]

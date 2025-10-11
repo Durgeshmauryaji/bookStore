@@ -43,7 +43,7 @@ const Banner = () => {
               />
             </label>
             <button className="btn bg-pink-500 text-white hover:bg-pink-600 transition text-sm sm:text-base">
-              Subscribe
+              Get Started
             </button>
           </div>
         </div>

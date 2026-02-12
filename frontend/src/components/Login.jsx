@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { useForm } from "react-hook-form"
-import axios from 'axios'
-import toast from 'react-hot-toast'
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import toast from "react-hot-toast";
 import { useAuth } from "../context/AuthProvider";
 
 function Login() {
@@ -13,7 +13,7 @@ function Login() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm()
+  } = useForm();
 
   const onSubmit = async (data) => {
     const userInfo = {
@@ -22,7 +22,10 @@ function Login() {
     };
 
     try {
-      const res = await axios.post("http://localhost:4001/user/login", userInfo);
+      const res = await axios.post(
+        "https://bookstore-1-vdio.onrender.com/user/login",
+        userInfo
+      );
 
       if (res.data) {
         toast.success("LoggedIn Successfully!");
@@ -36,10 +39,9 @@ function Login() {
         // ✅ Close modal
         document.getElementById("my_modal_3").close();
 
-        // ✅ Redirect to course/dashboard
+        // ✅ Redirect to course page
         navigate("/course");
       }
-
     } catch (err) {
       if (err.response) {
         toast.error("Login Error! " + err.response.data.message);
@@ -54,6 +56,7 @@ function Login() {
       <dialog id="my_modal_3" className="modal">
         <div className="modal-box bg-gray-100 text-slate-800">
           <form onSubmit={handleSubmit(onSubmit)}>
+            {/* Close button */}
             <button
               type="button"
               className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
@@ -65,7 +68,9 @@ function Login() {
             <h3 className="font-bold text-lg text-center">Login</h3>
 
             <div className="mt-4 space-y-2">
-              <span>Email</span><br />
+              {/* Email */}
+              <span>Email</span>
+              <br />
               <input
                 type="email"
                 placeholder="Enter your gmail"
@@ -73,10 +78,16 @@ function Login() {
                 className="w-80 px-3 border rounded-md outline-none"
               />
               <br />
-              {errors.email && <span className="text-red-500 text-sm px-1">Email is required</span>}
+              {errors.email && (
+                <span className="text-red-500 text-sm px-1">
+                  Email is required
+                </span>
+              )}
               <br />
 
-              <span>Password</span><br />
+              {/* Password */}
+              <span>Password</span>
+              <br />
               <input
                 type="password"
                 placeholder="Enter your password"
@@ -84,10 +95,16 @@ function Login() {
                 className="w-80 px-3 border rounded-md outline-none"
               />
               <br />
-              {errors.password && <span className="text-red-500 text-sm px-1">Password is required</span>}
+              {errors.password && (
+                <span className="text-red-500 text-sm px-1">
+                  Password is required
+                </span>
+              )}
             </div>
 
-            <br /><br />
+            <br />
+            <br />
+
             <div className="flex justify-between items-center">
               <button
                 type="submit"
@@ -95,16 +112,23 @@ function Login() {
               >
                 Login
               </button>
+
               <p>
                 Not registered?
-                <Link to="/signup" className="underline text-blue-500 cursor-pointer"> SignUp</Link>
+                <Link
+                  to="/signup"
+                  className="underline text-blue-500 cursor-pointer"
+                >
+                  {" "}
+                  SignUp
+                </Link>
               </p>
             </div>
           </form>
         </div>
       </dialog>
     </div>
-  )
+  );
 }
 
 export default Login;
